@@ -1,0 +1,22 @@
+body {
+    background-color: lavender;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+}
+
+.header img {
+    float: left;
+}
+
+.header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+    font-size: 48px;
+}
+
+button {
+    font-family: Trebuchet MS, 'Lucida Sans Unicode';
+    
+
+}
