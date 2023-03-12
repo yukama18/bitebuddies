@@ -1,11 +1,11 @@
 import './App.css';
-import TestHeader from './components/TestHeader';
+import CreateAccount from './components/CreateAccount';
 
 function App() {
   return (
     <div className="App">
-      <TestHeader />
-      
+      <CreateAccount/>
+
     </div>
   );
 }
