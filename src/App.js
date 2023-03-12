@@ -1,25 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import Message from './components/Message';
+//import toxicityDetection from './cohere/toxicityDetection4.cjs'
 
 function App() {
+
+  const [message, setMessage] = useState("");
+  const [messageList, setMessageList] = useState([]);
+
+  const addMessage = () => {
+    setMessageList([...messageList, {message: message}])
+    //if (toxicityDetection.checkMessageToxicity(message)) {
+     // setMessageList([...messageList, {message: message}])
+    //}
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {messageList.map((message) => {
+        return <Message message={message.message}/>
+      })}
+    
+      <input type="text" id="message" onChange={(e) => {
+        setMessage(e.target.value)
+      }}/>
+      <button onClick={addMessage}>Send</button>
+
+
     </div>
   );
 }
 
 export default App;
+//      <Chat />
