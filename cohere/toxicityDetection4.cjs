@@ -34,8 +34,6 @@ async function checkMessageToxicity(input) {
       examples: examples
     });
 
-    //console.log(JSON.stringify(response.body.classifications));
-
     let prediction = GOOD;
 
     if (response.body.classifications[0].prediction == BAD) {
@@ -46,6 +44,7 @@ async function checkMessageToxicity(input) {
 
     console.log("The given text: " + "'" + input + "'" + " has been flagged as " + prediction);
   }
+
 
 async function main() {
   checkMessageToxicity('hello this is cool');
@@ -59,3 +58,4 @@ async function main() {
 
 // Call the main function
 main();
+
